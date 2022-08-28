@@ -8,10 +8,10 @@ function App() {
     <div className="App">
       <MainLayout>
         <Sidebar>
-          Sidebar
+          <span>Sidebar</span>
         </Sidebar>
         <Content>
-          Content
+          <span>Content</span>
         </Content>
       </MainLayout>
     </div>

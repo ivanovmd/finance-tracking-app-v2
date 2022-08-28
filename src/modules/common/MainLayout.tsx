@@ -4,7 +4,7 @@ import { BaseProps } from './types';
 
 export default function MainLayout({ children }: BaseProps) {
     return <Container>
-        <Grid container spacing={2}>
+        <Grid container spacing={5}>
             {children}
         </Grid>
     </Container>
