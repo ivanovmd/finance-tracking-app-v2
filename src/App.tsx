@@ -3,15 +3,26 @@ import Content from './modules/common/Content';
 import MainLayout from './modules/common/MainLayout';
 import Sidebar from './modules/common/Sidebar';
 
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
+import { Typography } from '@mui/material';
+
 function App() {
   return (
     <div className="App">
       <MainLayout>
         <Sidebar>
-          <span>Sidebar</span>
+          <Typography variant="h4">
+            Sidebar
+          </Typography>
         </Sidebar>
+        
         <Content>
-          <span>Content</span>
+          <Typography variant="h4">
+            Content
+          </Typography>
         </Content>
       </MainLayout>
     </div>
