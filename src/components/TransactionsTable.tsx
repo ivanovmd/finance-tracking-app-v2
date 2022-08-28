@@ -1,0 +1,34 @@
+import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
+import { Transaction } from '../common/types';
+import { BaseProps } from '../modules/common/types';
+
+interface TransactionsTableProps extends BaseProps {
+    transactions: Transaction[]
+}
+
+
+const columns: GridColDef[] = [
+    { field: 'createdAt', headerName: 'Created At', flex: 1, minWidth: 150 },
+    { field: 'amount', headerName: 'Amount', type: 'number', flex: 1, minWidth: 150 },
+    {
+        field: 'description',
+        headerName: 'Description',
+        description: 'Description of the transaction. You can edit this.',
+        sortable: false,
+        flex: 1, 
+        minWidth: 150,
+        valueGetter: (params: GridValueGetterParams) => params.row.description,
+    },
+];
+
+
+export default function TransactionsTable({ transactions }: TransactionsTableProps) {
+    return <DataGrid
+        rows={transactions}
+        columns={columns}
+        pageSize={10}
+        rowsPerPageOptions={[10]}
+        checkboxSelection
+        autoHeight
+    />
+}

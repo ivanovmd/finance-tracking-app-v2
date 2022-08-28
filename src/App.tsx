@@ -8,11 +8,16 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import { Typography } from '@mui/material';
+import TransactionsTable from './components/TransactionsTable';
+import { transactions } from './tests/testData';
+
+
 
 function App() {
   return (
     <div className="App">
       <MainLayout>
+        
         <Sidebar>
           <Typography variant="h4">
             Sidebar
@@ -23,7 +28,10 @@ function App() {
           <Typography variant="h4">
             Content
           </Typography>
+
+          <TransactionsTable transactions={transactions}/>
         </Content>
+
       </MainLayout>
     </div>
   );
