@@ -1,4 +1,5 @@
 import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
+import dayjs from 'dayjs';
 import { Transaction } from '../common/types';
 import { BaseProps } from '../modules/common/types';
 
@@ -8,7 +9,7 @@ interface TransactionsTableProps extends BaseProps {
 
 
 const columns: GridColDef[] = [
-    { field: 'createdAt', headerName: 'Created At', flex: 1, minWidth: 150 },
+    { field: 'createdAt', headerName: 'Created At', flex: 1, minWidth: 150, valueGetter: (params: GridValueGetterParams) => dayjs(params.row.createdAt).format('MM/DD/YYYY') },
     { field: 'amount', headerName: 'Amount', type: 'number', flex: 1, minWidth: 150, valueGetter: (params: GridValueGetterParams) => `$${params.row.amount}` },
     {
         field: 'description',
@@ -17,7 +18,6 @@ const columns: GridColDef[] = [
         sortable: false,
         flex: 1,
         minWidth: 150,
-        valueGetter: (params: GridValueGetterParams) => params.row.description,
     },
 ];
 

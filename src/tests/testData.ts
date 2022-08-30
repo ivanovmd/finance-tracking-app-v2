@@ -10,7 +10,7 @@ export const transactions: Transaction[] = [
     },
     {
         id: 'qwsascasd',
-        amount: 12345,
+        amount: 12345.234,
         description: 'a fake transactionasd asd asd asd sadasd',
         origin: 'TD Bank',
         createdAt: Date.now()
