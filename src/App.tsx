@@ -11,6 +11,7 @@ import { Box, Button, ButtonGroup, Typography } from '@mui/material';
 import TransactionsTable from './components/TransactionsTable';
 import { transactions } from './tests/testData';
 import TransactionsDateFilter from './components/TransactionsDateFilter';
+import TransactionsCommonActions from './components/TransactionsCommonActions';
 
 
 function App() {
@@ -29,21 +30,6 @@ function App() {
           <Typography variant="h4">
             Content
           </Typography>
-
-          <TransactionsDateFilter onEndDateChange={console.log} onStartDateChange={console.log} />
-
-          <Box sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'end',
-            padding: '16px 0'
-          }}>
-            <ButtonGroup size="small">
-              <Button sx={{ padding: '4px 16px' }} disabled>Add Categories</Button>
-              <Button sx={{ padding: '4px 16px' }} disabled>Add Tags</Button>
-              <Button sx={{ padding: '4px 16px' }} disabled>Delete</Button>
-            </ButtonGroup>
-          </Box>
 
           <TransactionsTable transactions={transactions} />
         </Content>

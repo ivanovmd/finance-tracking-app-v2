@@ -1,7 +1,10 @@
 import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
 import dayjs from 'dayjs';
+import { Fragment } from 'react';
 import { Transaction } from '../common/types';
 import { BaseProps } from '../modules/common/types';
+import TransactionsCommonActions from './TransactionsCommonActions';
+import TransactionsDateFilter from './TransactionsDateFilter';
 
 interface TransactionsTableProps extends BaseProps {
     transactions: Transaction[]
@@ -23,15 +26,24 @@ const columns: GridColDef[] = [
 
 
 export default function TransactionsTable({ transactions }: TransactionsTableProps) {
-    return <DataGrid
-        rows={transactions}
-        loading={!transactions || transactions.length === 0}
-        columns={columns}
-        pageSize={10}
-        rowsPerPageOptions={[10]}
-        autoHeight
-        checkboxSelection
-        disableSelectionOnClick
-        experimentalFeatures={{ newEditingApi: true }}
-    />
+    return <Fragment>
+        <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+            <TransactionsDateFilter onEndDateChange={console.log} onStartDateChange={console.log} />
+
+            <TransactionsCommonActions selectedRows={['fake']} onAddCategoriesClick={console.log} onAddTagsClick={console.log} onDeleteClick={console.log} />
+        </div>
+
+        <DataGrid
+            rows={transactions}
+            loading={!transactions || transactions.length === 0}
+            columns={columns}
+            pageSize={10}
+            rowsPerPageOptions={[10]}
+            autoHeight
+            checkboxSelection
+            disableSelectionOnClick
+            experimentalFeatures={{ newEditingApi: true }}
+        />
+    </Fragment>
+
 }

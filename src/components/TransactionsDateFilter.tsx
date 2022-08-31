@@ -39,21 +39,23 @@ export default function TransactionsDateFilter({ onStartDateChange, onEndDateCha
 
 
     return <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <DesktopDatePicker
-            label="Start Date"
-            inputFormat="MM/DD/YYYY"
-            value={startDate}
-            onChange={handleStartDateChange}
-            renderInput={(params) => <TextField size='small' {...params} />}
-        />
-        <DesktopDatePicker
-            label="End Date"
-            inputFormat="MM/DD/YYYY"
-            minDate={startDate || undefined}
-            value={endtDate}
-            onChange={handleEndDateChange}
-            disableFuture
-            renderInput={(params) => <TextField size='small' {...params} />}
-        />
+        <div>
+            <DesktopDatePicker
+                label="Start Date"
+                inputFormat="MM/DD/YYYY"
+                value={startDate}
+                onChange={handleStartDateChange}
+                renderInput={(params) => <TextField size='small' {...params} />}
+            />
+            <DesktopDatePicker
+                label="End Date"
+                inputFormat="MM/DD/YYYY"
+                minDate={startDate || undefined}
+                value={endtDate}
+                onChange={handleEndDateChange}
+                disableFuture
+                renderInput={(params) => <TextField size='small' {...params} />}
+            />
+        </div>
     </LocalizationProvider>
 }
