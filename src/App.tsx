@@ -7,7 +7,7 @@ import '@fontsource/roboto/300.css';
 import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
-import { Box, Button, ButtonGroup, Typography } from '@mui/material';
+import { Box, Button, ButtonGroup, Chip, Stack, Typography } from '@mui/material';
 import TransactionsTable from './components/TransactionsTable';
 import { transactions } from './tests/testData';
 import TransactionsDateFilter from './components/TransactionsDateFilter';
@@ -24,6 +24,10 @@ function App() {
           <Typography variant="h4">
             Sidebar
           </Typography>
+
+          <Stack direction="row" spacing={1}>
+            <Chip label="Small" size="small" style={{backgroundColor: 'red', color: 'white'}}/>
+          </Stack>
         </Sidebar>
 
         <Content>
