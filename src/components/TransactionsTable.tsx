@@ -27,7 +27,7 @@ const columns: GridColDef[] = [
 
 export default function TransactionsTable({ transactions }: TransactionsTableProps) {
     return <Fragment>
-        <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <TransactionsDateFilter onEndDateChange={console.log} onStartDateChange={console.log} />
 
             <TransactionsCommonActions selectedRows={['fake']} onAddCategoriesClick={console.log} onAddTagsClick={console.log} onDeleteClick={console.log} />

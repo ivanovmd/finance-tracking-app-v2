@@ -26,7 +26,7 @@ function App() {
           </Typography>
 
           <Stack direction="row" spacing={1}>
-            <Chip label="Small" size="small" style={{backgroundColor: 'red', color: 'white'}}/>
+            <Chip label="Small" size="small" clickable style={{backgroundColor: 'red', color: 'white'}}/>
           </Stack>
         </Sidebar>
 
