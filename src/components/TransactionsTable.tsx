@@ -1,3 +1,4 @@
+import { FormControl, OutlinedInput } from '@mui/material';
 import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
 import dayjs from 'dayjs';
 import { Fragment } from 'react';
@@ -31,6 +32,12 @@ export default function TransactionsTable({ transactions }: TransactionsTablePro
       <TransactionsDateFilter onEndDateChange={console.log} onStartDateChange={console.log} />
 
       <TransactionsCommonActions selectedRows={['fake']} onAddCategoriesClick={console.log} onAddTagsClick={console.log} onDeleteClick={console.log} />
+    </div>
+
+    <div style={{ paddingBottom: '16px' }}>
+      <FormControl fullWidth>
+        <OutlinedInput placeholder="Please enter text" size='small' />
+      </FormControl>
     </div>
 
     <DataGrid

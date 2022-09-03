@@ -1,4 +1,6 @@
 import { IconButton, Slider } from "@mui/material";
+import AddIcon from '@mui/icons-material/Add';
+
 
 interface Category {
   name: string
@@ -24,11 +26,7 @@ export default function CategoryWeights() {
     return acc
   }, [])
 
-  return <div>
-    <IconButton aria-label="delete" size="small">
-      <DeleteIcon fontSize="inherit" />
-    </IconButton>
-
+  return <div style={{ display: 'flex' }}>
     <Slider
       track={false}
       aria-labelledby="track-inverted-range-slider"
@@ -36,6 +34,10 @@ export default function CategoryWeights() {
       size='small'
       disableSwap
     />
+
+    <IconButton color="primary" aria-label="delete" size="small">
+      <AddIcon fontSize="inherit" />
+    </IconButton>
   </div>
 
 }
