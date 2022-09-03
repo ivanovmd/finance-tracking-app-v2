@@ -51,5 +51,4 @@ export default function TransactionsTable({ transactions }: TransactionsTablePro
       experimentalFeatures={{ newEditingApi: true }}
     />
   </Fragment>
-
 }

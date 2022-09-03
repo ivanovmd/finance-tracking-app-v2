@@ -1,4 +1,4 @@
-import { Transaction } from "../modules/common/types";
+import { Category, Transaction } from "../modules/common/types";
 
 export const transactions: Transaction[] = [
   {
@@ -19,16 +19,19 @@ export const transactions: Transaction[] = [
 
 export const categories: Category[] = [
   {
+    id: 'asdaf23',
     name: 'Amazon',
     color: 'orange',
     weight: 40
   },
   {
+    id: 'asdaf23d',
     name: 'Groceries',
     color: 'green',
     weight: 35
   },
   {
+    id: 'asdaf23a',
     name: 'Groceries',
     color: 'yellow',
     weight: 25
