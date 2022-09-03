@@ -9,7 +9,7 @@ import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 import { Chip, Stack, Typography, Input, FormControl, OutlinedInput } from '@mui/material';
 import TransactionsTable from './components/TransactionsTable';
-import { transactions } from './tests/testData';
+import { transactions, categories } from './tests/testData';
 import CategoryWeights from './components/CategoryWeights';
 
 function App() {
@@ -39,7 +39,7 @@ function App() {
 
         <Content>
           <h2>Content</h2>
-          <CategoryWeights />
+          <CategoryWeights categories={categories} />
           <Typography variant="h4">
             Content
           </Typography>

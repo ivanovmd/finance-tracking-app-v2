@@ -2,8 +2,7 @@ import { FormControl, OutlinedInput } from '@mui/material';
 import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
 import dayjs from 'dayjs';
 import { Fragment } from 'react';
-import { Transaction } from '../common/types';
-import { BaseProps } from '../modules/common/types';
+import { BaseProps, Transaction } from '../modules/common/types';
 import TransactionsCommonActions from './TransactionsCommonActions';
 import TransactionsDateFilter from './TransactionsDateFilter';
 

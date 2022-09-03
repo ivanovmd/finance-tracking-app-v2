@@ -1,31 +1,23 @@
 import { IconButton, Slider } from "@mui/material";
 import AddIcon from '@mui/icons-material/Add';
+import { BaseProps, Category } from "../modules/common/types";
 
-
-interface Category {
-  name: string
-  color: string
-  weight: number
+interface CategoryWeightsProps extends BaseProps {
+  categories: Category[]
 }
 
-export default function CategoryWeights() {
-  const categories: Category[] = [
-    {
-      name: 'Amazon',
-      color: 'orange',
-      weight: 40
-    },
-    {
-      name: 'Groceries',
-      color: 'green',
-      weight: 60
+const calculateCategoriesSliderPositions = (categories: Category[]) => categories.reduce((acc: number[], curr, i) => {
+  if (i !== categories.length - 1) {
+    if (i === 0) {
+      acc.push(curr.weight)
+    } else {
+      acc.push(categories[i - 1].weight + curr.weight)
     }
-  ]
+  }
+  return acc
+}, [])
 
-  const calculateCategoriesSliderPositions = (categories: Category[]) => categories.reduce((acc, curr) => {
-    return acc
-  }, [])
-
+export default function CategoryWeights({ categories }: CategoryWeightsProps) {
   return <div style={{ display: 'flex' }}>
     <Slider
       track={false}
