@@ -31,5 +31,4 @@ export default function CategoryWeights({ categories }: CategoryWeightsProps) {
       <AddIcon fontSize="inherit" />
     </IconButton>
   </div>
-
 }
